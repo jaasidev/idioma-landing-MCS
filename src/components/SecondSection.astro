@@ -2,6 +2,20 @@
 import Documentos from "../assets/Documentos.astro";
 ---
 
-<section>
+<section class="h-[700px] flex flex-col items-center justify-center md:flex-row md:gap-5 w-full">
   <Documentos/>
+  <div class="flex items-center justify-center md:items-start flex-col text-center gap-4 md:text-left p-3 md:p-5 md:w-1/2">
+    <h2 class="text-[--text-100] text-5xl font-medium md:text-[4rem]">
+      Qué necesitas?
+    </h2>
+    <ul class="text-[--text-100] text-2xl md:text-[2rem]">
+      <li class="md:mb-3">
+        - Carnet de identidad
+      </li >
+      <li class="md:mb-3">
+        - Carta del centro de trabajo
+      </li>
+      <li class="md:mb-3">- Pago relacionado a 2 meses (40 CUP)</li>
+    </ul>
+  </div>
 </section>
