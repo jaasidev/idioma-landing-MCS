@@ -10,21 +10,23 @@
       </li>
     </ul>
   </nav>
-  <nav class="block  md:hidden ">
-    <input type="checkbox" class="z-50"/>
-    <ul class="flex flex-col p-5 w-[300px] opacity-0 text-xl gap-5font-medium fixed left-[-100%] top-0 bottom-0 bg-[--bg-100] w- border-r border-r-black border-opacity-5 shadow-screen z-20">
-      <li class="cursor-pointer">Inicio</li>
-      <li class="cursor-pointer">Documentación</li>
-      <li class="cursor-pointer">Convocatoria</li>
-      <li class="cursor-pointer">Info</li>
-    </ul>
-  </nav>
+  <div class="block  md:hidden ">
+    <input type="checkbox" class="z-50 "/>
+    <nav class="flex flex-col p-5 w-[300px] fixed left-[-100%] top-0 bottom-0 bg-[--bg-100] w- border-r border-r-black border-opacity-5 shadow-screen z-20 opacity-0">
+      <ul class=" text-xl gap-5 font-medium mt-20">
+        <li class="cursor-pointer">Inicio</li>
+        <li class="cursor-pointer">Documentación</li>
+        <li class="cursor-pointer">Convocatoria</li>
+        <li class="cursor-pointer">Info</li>
+      </ul>
+    </nav>
+  </div>
 </header>
 <style>
   .shadow-screen{
     box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
   }
-  nav input:checked ~ ul{
+  div input:checked ~ nav{
     left: 0;
     opacity: 1;
   }
