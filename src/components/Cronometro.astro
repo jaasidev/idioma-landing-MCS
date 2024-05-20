@@ -3,27 +3,47 @@
     Las próximas pruebas comienzan en:
   </span>
   <div class="flex items-center justify-center text-5xl text-[--text-100]">
-    <div class="flex flex-col items-center justify-center ">
-      <span >00</span>
+    <div class="flex flex-col items-center justify-center" >
+      <span class="countdown" data-days>00</span>
       <span class="text-sm text-[--text-200]">días</span>
     </div>
     <span class="self-start">:</span>
     <div class="flex flex-col items-center justify-center">
-      <span >00</span>
+      <span class="countdown" data-hours >00</span>
       <span class="text-sm text-[--text-200]">horas</span>
     </div>
     <span class="self-start">:</span>
     <div class="flex flex-col items-center justify-center">
-      <span >00</span>
+      <span class="countdown" data-minutes>00</span>
       <span class="text-sm text-[--text-200]">minutos</span>
     </div>
     <span class="self-start">:</span>
     <div class="flex flex-col items-center justify-center">
-      <span >00</span>
+      <span class="countdown" data-seconds>00</span>
       <span class="text-sm text-[--text-200]">segundos</span>
     </div>
   </div>
 </div>
 <script>
   const lastime=1717621200000
+  const days = 86400000
+  const hour = 3600000
+  const minutes = 60000
+  const SECOND = 1000
+
+  const $day = document.querySelector("[data-days]")
+  const $hour = document.querySelector("[data-hours]")
+  const $minutes = document.querySelector("[data-minutes]")
+  const $seconds = document.querySelector("[data-seconds]")
+
+  function cronometro (){
+    const now = new Date().getTime()
+    const dif = lastime - now
+
+    $day.innerHTML = Math.floor(dif/days).toString().padStart(2,"0")
+    $hour.innerHTML = Math.floor(dif%days/hour).toString().padStart(2,"0")
+    $minutes.innerHTML = Math.floor(dif%days%hour/minutes).toString().padStart(2,"0")
+    $seconds.innerHTML = Math.floor(dif%days%hour%minutes/SECOND).toString().padStart(2,"0")
+  }
+  setInterval(cronometro, SECOND)
 </script>
