@@ -42,8 +42,8 @@
 
     $day.innerHTML = Math.floor(dif/days).toString().padStart(2,"0")
     $hour.innerHTML = Math.floor(dif%days/hour).toString().padStart(2,"0")
-    $minutes.innerHTML = Math.floor(dif%days%hour/minutes).toString().padStart(2,"0")
-    $seconds.innerHTML = Math.floor(dif%days%hour%minutes/SECOND).toString().padStart(2,"0")
+    $minutes.innerHTML = Math.floor(dif%hour/minutes).toString().padStart(2,"0")
+    $seconds.innerHTML = Math.floor(dif%minutes/SECOND).toString().padStart(2,"0")
   }
   setInterval(cronometro, SECOND)
 </script>
