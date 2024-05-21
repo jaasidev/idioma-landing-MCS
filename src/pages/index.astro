@@ -5,6 +5,7 @@ import FirstSection from '../components/FirstSection.astro'
 import SecondSection from '../components/SecondSection.astro';
 import Thirdsection from '../components/Thirdsection.astro';
 import Footer from '../components/Footer.astro';
+import IdiomasSection from '../components/IdiomasSection.astro';
 ---
 
 <Layout title="Miguel de Cervantes Saavedra-Escuela de Idioma">
@@ -19,6 +20,11 @@ import Footer from '../components/Footer.astro';
  </div>
  <div class="mt-3 xl:max-w-[1250px] 2xl:max-w-[1400px] w-full">
 	<Thirdsection/>
+ </div>
+ <div class="bg-[--bg-200] w-full flex items-center justify-center">
+	<div class="mt-3 xl:max-w-[1250px] 2xl:max-w-[1400px] w-full">
+		<IdiomasSection/>
+	</div>
  </div>
  <Footer/>
 </Layout>
