@@ -1,4 +1,4 @@
-<header class="flex items-center justify-between md:justify-center w-full border-b border-b-black border-opacity-10 md:p-5 px-3 py-2 bg-white fixed top-0 left-0 right-0 shadow-sm z-10 bg-opacity-80 backdrop-blur-sm">
+<header class="flex items-center justify-between md:justify-center w-full border-b border-b-black border-opacity-10 md:p-5 px-3 py-2 bg-white sticky top-0 left-0 right-0 shadow-sm z-10 bg-opacity-80 backdrop-blur-sm">
   <nav class="hidden md:block w-full">
     <ul class=" font-medium text-md flex items-center justify-center gap-6 text-[--text-200]">
       <li class="cursor-pointer"><a href="#inicio">Inicio</a></li>
@@ -7,32 +7,33 @@
       <li class="cursor-pointer"><a href="#idiomas">Info</a></li>
     </ul>
   </nav>
-  <div class="md:hidden ">
-    <label class="btn btn-circle swap swap-rotate z-30" id=""> 
-      <input type="checkbox" id="nav-mobile"/>
-      <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
-      
-      <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg> 
-    </label>
+  <label class="btn md:hidden" for="nav-menu">
+    hola
+  </label>
 </header>
-<div class="md:hidden ">
-  <nav id="nav" class="flex flex-col p-5 w-[300px] fixed left-[-100%] top-0 bottom-0 bg-[--bg-100] w- border-r border-r-black border-opacity-5 shadow-screen z-10 opacity-0">
-    <ul class=" text-xl gap-5 font-medium mt-20">
-      <li class="cursor-pointer"><a href="#documentacion">Documentación</a></li>
-      <li class="cursor-pointer"><a href="#convocatoria">Convocatoria</a></li>
+<div class="md:hidden  flex justify-center w-auto">
+  <input type="checkbox" id="nav-menu"  hidden/>
+  <nav class="hidden flex-col items-center p-3 w-[300px] sm:w-[400px] bg-[--bg-100] h-full shadow-screen fixed left-[-100%] opacity-0 top-0 bottom-0 z-30 ">
+    <label for="nav-menu" class="mt-20">Cierre</label>
+    <ul class="w-full ml-4 p-2">
+      <li class="cursor-pointer font-medium text-xl mb-2"><a href="#inicio">Inicio</label></li>
+      <li class="cursor-pointer font-medium text-xl mb-2"><a href="#documentacion">Documentación</a></li>
+      <li class="cursor-pointer font-medium text-xl mb-2"><a href="#convocatoria">Convocatoria</a></li>
+      <li class="cursor-pointer font-medium text-xl mb-2"><a href="#idiomas">Info</a></li>
     </ul>
   </nav>
 </div>
-</div>
-<script>
-  const toogle = document.getElementById("nav-mobile")
-  const menu = document.getElementById("nav")
-</script>
+
+
 <style>
   .shadow-screen{
     box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
   }
-  .visible{
+  div input:checked ~nav{
+    transition-property: left, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    display: flex;
     left: 0;
     opacity: 1;
   }
