@@ -18,14 +18,14 @@
 </header>
 <div class="md:hidden  flex justify-center w-auto">
   <input type="checkbox" id="nav-menu"  hidden/>
-  <nav class="hidden flex-col items-center p-3 w-[300px] sm:w-[400px] bg-[--bg-100] h-full shadow-screen fixed left-[-100%] opacity-0 top-0 bottom-0 z-30">
+  <nav class="flex flex-col items-center p-3 w-[300px] sm:w-[400px] bg-[--bg-100] h-full shadow-screen fixed left-[-100%] opacity-0 top-0 bottom-0 z-30 transition-all">
     <label for="nav-menu" class="absolute left-5 top-5 "><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <path d="M18 6l-12 12" />
       <path d="M6 6l12 12" />
     </svg></label>
       <ul class="w-full ml-4 p-2 mt-20 text-[--text-100]">
-        <li class="cursor-pointer font-medium text-2xl mb-2"><a href="#inicio">Inicio</label></li>
+        <li class="cursor-pointer font-medium text-2xl mb-2"><a href="#inicio">Inicio</a></li>
         <li class="cursor-pointer font-medium text-2xl mb-2"><a href="#documentacion">Documentación</a></li>
         <li class="cursor-pointer font-medium text-2xl mb-2"><a href="#convocatoria">Convocatoria</a></li>
         <li class="cursor-pointer font-medium text-2xl mb-2"><a href="#idiomas">Info</a></li>
@@ -33,16 +33,11 @@
   </nav>
 </div>
 
-
 <style>
   .shadow-screen{
     box-shadow: 0 0 0 100vmax rgb(0, 0, 0, .5);
   }
   div input:checked ~nav{
-    transition-property: left, opacity;
-    transition-duration: 0.5s;
-    transition-timing-function: linear;
-    display: flex;
     left: 0;
     opacity: 1;
   }
