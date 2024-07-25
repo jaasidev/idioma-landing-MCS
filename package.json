@@ -16,6 +16,8 @@
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.14.3",
     "daisyui": "^4.11.1"
   }
 }
